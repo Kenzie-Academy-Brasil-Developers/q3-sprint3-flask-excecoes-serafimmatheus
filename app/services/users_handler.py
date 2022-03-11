@@ -5,6 +5,7 @@ from ..exception import ValidateDataJsonError
 import os
 
 DATABASE = os.getenv("DATABASE")
+
 def read_json(file_path: str):
     try:
         with open(file_path, "r") as json_file:
@@ -28,8 +29,23 @@ def validate_email(email: str):
 
     return [emails for emails in data_base if emails["email"] == email]
 
-def validate_json_data_email(value):
-    if type(value) != str:
+def validate_json_data_email(email, name):
+    if type(email) != str or type(name) != str:
         return ValidateDataJsonError
     else:
-        return value
+        return False
+
+
+def add_id_users():
+    data_base = read_json(DATABASE)
+
+    if data_base:
+        list_id = []
+        for i in data_base:
+            list_id.append(i["id"])
+
+        last_id = list_id[-1] + 1
+        return last_id
+
+    return 1
+

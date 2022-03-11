@@ -27,6 +27,7 @@ def post_user():
     except ValidateEmailError:
         return { "error": "User already exists."}, HTTPStatus.CONFLICT
     except ValidateDataJsonError as e:
+        # return {"wrong fields": [{}, {}]}, e.status_code
         return {"wrong fields": e.message}, e.status_code
 
 
