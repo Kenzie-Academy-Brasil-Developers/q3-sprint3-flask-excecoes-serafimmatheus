@@ -7,10 +7,10 @@ class ValidateDataJsonError(Exception):
         if message:
             self.message = message
         else:
-            nameFormated = {"name": type(name)}
-            emailFormated = {"email": type(email)}
+            nameFormated = {"name": type(name).__name__}
+            emailFormated = {"email": type(email).__name__}
            
-            # self.message = [nameFormated, emailFormated]
-            self.message = [f'{nameFormated}', f'{emailFormated}']
+            self.message = [nameFormated, emailFormated]
+            # self.message = [f'{nameFormated}', f'{emailFormated}']
 
         self.status_code = status_code
