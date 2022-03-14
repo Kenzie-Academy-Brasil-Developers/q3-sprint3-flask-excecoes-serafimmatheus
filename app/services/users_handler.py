@@ -1,3 +1,4 @@
+from ast import Str
 from http import HTTPStatus
 import json
 from json.decoder import JSONDecodeError
@@ -29,8 +30,8 @@ def validate_email(email: str):
 
     return [emails for emails in data_base if emails["email"] == email]
 
-def validate_json_data_email(email, name):
-    if type(email) != str or type(name) != str:
+def validate_json_data_email(email, nome):
+    if type(email) != str or type(nome) != str:
         return ValidateDataJsonError
     else:
         return False
@@ -48,4 +49,17 @@ def add_id_users():
         return last_id
 
     return 1
+
+
+def verify_str_email(is_string: str):
+    if type(is_string) == str:
+        return is_string.lower()
+    
+    return is_string
+
+def verify_str_nome(is_string: str):
+    if type(is_string) == str:
+        return is_string.title()
+    
+    return is_string
 

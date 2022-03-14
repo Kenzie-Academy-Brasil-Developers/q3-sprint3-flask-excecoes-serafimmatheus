@@ -3,11 +3,11 @@ class ValidateEmailError(Exception):
 
 
 class ValidateDataJsonError(Exception):
-    def __init__(self, message=None, status_code=400, email="not informed", name="not informed"):
+    def __init__(self, message=None, status_code=400, email="not informed", nome="not informed"):
         if message:
             self.message = message
         else:
-            nameFormated = {"name": type(name).__name__}
+            nameFormated = {"nome": type(nome).__name__}
             emailFormated = {"email": type(email).__name__}
            
             self.message = [nameFormated, emailFormated]

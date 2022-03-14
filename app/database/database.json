@@ -1,17 +1,7 @@
 [
   {
-    "name": "Matheus Serafim",
-    "email": "matheus1@gmail.com",
+    "nome": "Matheus Serafim",
+    "email": "matheus18serafim@gmail.com",
     "id": 1
-  },
-  {
-    "name": "Matheus Serafim",
-    "email": "matheus@gmail.com",
-    "id": 2
-  },
-  {
-    "name": "123",
-    "email": "[]",
-    "id": 3
   }
 ]
